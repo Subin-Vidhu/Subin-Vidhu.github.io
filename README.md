@@ -1,62 +1,102 @@
-# 🌟 About Me 🚀
+<!-- **Header Section** -->
+<header>
+  <h1>Subin S</h1>
+  <p>ML Engineer</p>
+</header>
 
-I am Subin S, a passionate **ML Engineer** based in Kerala, India 🇮🇳. With a **B.Tech in ECE** from KTU University 🎓, I've honed my skills in Python, TensorFlow, and Segmentation models over two and a half years. I've worked at **Aramis Imaging LLP** as an **AI Developer/ML Engineer** and at **ICT Academy of Kerala** as a **Data Science Analyst**. I excel in crafting robust AI solutions for medical imaging and disease diagnosis. Let's connect on [LinkedIn](https://www.linkedin.com/in/subinvidhu/) 👋!
+<!-- **About Me Section** -->
+### About Me 🤝
+================
 
-## 🛠️ Projects
+Highly motivated and experienced ML Engineer with a strong passion for technology and commitment to quality work. With over 2.5 years of experience in delivering exceptional results for startups, I possess strong problem-solving skills, effective solution design, and cross-functional teamwork. I hold a B.Tech degree in ECE from KTU University with a CGPA of 9.0 and have a strong educational background.
 
-### 1. Renal Image Segmentation Model
-- Developed a robust renal image segmentation model using TensorFlow and CNNs, achieving state-of-the-art results.
-- Collaborated with medical experts to validate and refine the model's accuracy for clinical settings.
-- Website: [aira.protosonline.in](aira.protosonline.in)
+<!-- **Projects Section** -->
+### Projects 🚀
+================
 
-### 2. Cancer Classification Models
-- Utilized machine learning algorithms for prostate, lung, rectum, breast, and colon cancer classification, aiding in disease diagnosis and risk assessment.
-- Website: [chaimeleon.grand-challenge.org](https://chaimeleon.grand-challenge.org)
+#### Medical Image Analysis
 
-### 3. Vertebrae Segmentation
-- Implemented deep learning techniques for accurate segmentation of C2 and L5 vertebrae, showcasing proficiency in medical image analysis.
-- Website: [vertevue.protosonline.in](vertevue.protosonline.in)
+* **Renal Image Segmentation**: Developed a robust renal image segmentation model using TensorFlow and CNNs, achieving state-of-the-art results. [aira.protosonline.in] 📊
+* **Cancer Classification**: Applied machine learning algorithms and medical imaging data for prostate, lung, rectum, breast, and colon cancer classification, aiding in disease diagnosis and risk assessment. [https://chaimeleon.grand-challenge.org] 🏥
+* **Vertebrae Segmentation**: Implemented deep learning techniques for accurate segmentation of C2 and L5 vertebrae, demonstrating proficiency in medical image analysis. [vertevue.protosonline.in] 🦴
+* **Whole-Body Tumor Detection**: Designed and implemented a CNN model for whole-body tumor detection, contributing to early detection strategies. [suvue.protosonline.in] 🌡️
+* **Breast Cancer Classification**: Developed a multi-class classification model for breast cancer types, showcasing expertise in medical image analysis and classification. 🎀
+* **DIY AI Tool**: Created a DIY AI tool for medical experts and doctors to create AI models without coding, pioneering a new approach in AI model development. [diyai.protosonline.in] 🛠️
+* **Medical Chatbot**: Utilized generative AI and RAG method to develop a medical chatbot for radiologists using data from radiopaedia.org, enhancing communication and workflow efficiency. [simara.protosonline.in] 💬
+* **Renal Segmentation v2**: Developed version 2 of Renal Segmentation, including cyst prediction in addition to kidney and calculi detection. [airav2.protosonline.in] 📈
 
-### 4. Whole-Body Tumor Detection
-- Designed and implemented a CNN model for whole-body tumor detection, contributing to early detection strategies.
-- Website: [suvue.protosonline.in](suvue.protosonline.in)
+<!-- **Technical Skills Section** -->
+### Technical Skills 💻
+=====================
 
-### 5. Breast Cancer Classification
-- Developed a multi-class classification model for breast cancer types, showcasing expertise in medical image analysis and classification.
+* Programming languages: Python, JavaScript
+* Frameworks: Flask, Django
+* Tools: ImageJ, MEDSEG, Spyder, VScode, Pycharm, Google Colab
+* Libraries: TensorFlow, NumPy, Pandas, Scikit-learn, OpenCV
 
-### 6. DIY AI Tool for Medical Experts
-- Created a DIY AI tool for medical experts and doctors to create AI models without coding, pioneering a new approach in AI model development.
-- Website: [diyai.protosonline.in](diyai.protosonline.in)
+<!-- **Experience Section** -->
+### Experience 📊
+================
 
-### 7. Medical Chatbot Development
-- Utilized generative AI and RAG method to develop a medical chatbot for radiologists using data from radiopaedia.org, enhancing communication and workflow efficiency.
-- Website: [simara.protosonline.in](simara.protosonline.in)
+* **Lead Research and Development team**: Expertise in TensorFlow, Segmentation models, and proficiency in Python, NumPy, and Pandas.
+* **AI Developer/ML Engineer**: Worked on Data Science Projects, deployed on a website using HTML, CSS, and Flask, and assisted the team with various aspects of projects. (Aramis Imaging LLP, August 2021 - present)
+* **Data Science and Analyst**: Worked on Data Science Projects and managed teams when the team lead was unavailable. (ICT Academy of Kerala, Jan 2020 - July 2020)
 
-### 8. Version 2 of Renal Segmentation
-- Developed version 2 of Renal Segmentation, including cyst prediction in addition to kidney and calculi detection.
-- Website: [airav2.protosonline.in](airav2.protosonline.in)
+<!-- **Achievements Section** -->
+### Achievements 🏆
+================
 
-## 💻 Technical Skills
+* Participated in the Grand Challenge Competition at chaimeleon.grand-challenge.org and achieved top-level positions in various challenges.
+* Attended RSNA and Arab Health Expo (2022, 2023 - Online)
 
-- **Languages**: Python, JavaScript, SQL
-- **Frameworks**: Flask, Django
-- **Tools**: ImageJ, MEDSEG
-- **IDE**: Spyder, VScode, PyCharm, Google Colab
-- **Proficiency**: TensorFlow, Numpy, Pandas, Scikit-learn, OpenCV
+<!-- **Contact Section** -->
+### Contact 📲
+================
 
-## 🏆 Achievements
+* Email: [subinvidhu3232@gmail.com](mailto:subinvidhu3232@gmail.com)
+* Phone: 8086516291
+* Passport No: V3069547 (EXP: 15/11/2031)
 
-- Participated in the Grand Challenge Competition at [chaimeleon.grand-challenge.org](https://chaimeleon.grand-challenge.org) and achieved top-level positions in various challenges.
-- Attended RSNA and Arab Health Expo (2022, 2023 - Online)
-
-## 🌟 Others
-
-- Experience in hosting and DevOps, as all projects are live and hosted using either Nginx or Caddy.
-- Proficient in English, Malayalam, and Hindi.
-
-## 📧 Contact
-
-- Email: subinvidhu3232@gmail.com
-- Phone: 8086516291
-- Location: Kerala, India
-- Let's connect on [LinkedIn](https://www.linkedin.com/in/subinvidhu/) 👉!
+<style>
+  /* Add some basic styling to make it look nicer */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+  }
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  section {
+    padding: 20px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  li:last-child {
+    border-bottom: none;
+  }
+  a {
+    text-decoration: none;
+    color: #337ab7;
+  }
+  a:hover {
+    color: #23527c;
+  }
+</style>
