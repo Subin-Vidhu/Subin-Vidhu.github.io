@@ -7,7 +7,7 @@ I am Subin S, a passionate **ML Engineer** based in Kerala, India 🇮🇳. With
 ### 1. Renal Image Segmentation Model
 - Developed a robust renal image segmentation model using TensorFlow and CNNs, achieving state-of-the-art results.
 - Collaborated with medical experts to validate and refine the model's accuracy for clinical settings.
-- Website: [aira.protosonline.in](aira.protosonline.in)
+- Website: [aira.protosonline.in](https://aira.protosonline.in)
 
 ### 2. Cancer Classification Models
 - Utilized machine learning algorithms for prostate, lung, rectum, breast, and colon cancer classification, aiding in disease diagnosis and risk assessment.
@@ -15,26 +15,26 @@ I am Subin S, a passionate **ML Engineer** based in Kerala, India 🇮🇳. With
 
 ### 3. Vertebrae Segmentation
 - Implemented deep learning techniques for accurate segmentation of C2 and L5 vertebrae, showcasing proficiency in medical image analysis.
-- Website: [vertevue.protosonline.in](vertevue.protosonline.in)
+- Website: [vertevue.protosonline.in](https://vertevue.protosonline.in)
 
 ### 4. Whole-Body Tumor Detection
 - Designed and implemented a CNN model for whole-body tumor detection, contributing to early detection strategies.
-- Website: [suvue.protosonline.in](suvue.protosonline.in)
+- Website: [suvue.protosonline.in](https://suvue.protosonline.in)
 
 ### 5. Breast Cancer Classification
 - Developed a multi-class classification model for breast cancer types, showcasing expertise in medical image analysis and classification.
 
 ### 6. DIY AI Tool for Medical Experts
 - Created a DIY AI tool for medical experts and doctors to create AI models without coding, pioneering a new approach in AI model development.
-- Website: [diyai.protosonline.in](diyai.protosonline.in)
+- Website: [diyai.protosonline.in](https://diyai.protosonline.in)
 
 ### 7. Medical Chatbot Development
 - Utilized generative AI and RAG method to develop a medical chatbot for radiologists using data from radiopaedia.org, enhancing communication and workflow efficiency.
-- Website: [simara.protosonline.in](simara.protosonline.in)
+- Website: [simara.protosonline.in](https://simara.protosonline.in)
 
 ### 8. Version 2 of Renal Segmentation
 - Developed version 2 of Renal Segmentation, including cyst prediction in addition to kidney and calculi detection.
-- Website: [airav2.protosonline.in](airav2.protosonline.in)
+- Website: [airav2.protosonline.in](https://airav2.protosonline.in)
 
 ## 💻 Technical Skills
 
