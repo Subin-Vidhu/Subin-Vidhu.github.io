@@ -1,6 +1,6 @@
 # 🌟 About Me 🚀
 
-I am Subin S, a passionate **ML Engineer** based in Kerala, India 🇮🇳. With a **B.Tech in ECE** from KTU University 🎓, I've honed my skills in Python, TensorFlow, and Segmentation models over two and a half years. I've worked at **Aramis Imaging LLP** as an **AI Developer/ML Engineer** and at **ICT Academy of Kerala** as a **Data Science Analyst**. I excel in crafting robust AI solutions for medical imaging and disease diagnosis. Let's connect on [LinkedIn](https://www.linkedin.com/in/subinvidhu/) 👋!
+I am Subin S, a passionate **ML Engineer** based in Kerala, India 🇮🇳. With a **B.Tech in ECE** from KTU University 🎓, I've honed my skills in Python, TensorFlow, and Segmentation models over three years. I've worked at **Aramis Imaging LLP** as an **AI Developer/ML Engineer** and at **ICT Academy of Kerala** as a **Data Science Analyst**. I excel in crafting robust AI solutions for medical imaging and disease diagnosis. Let's connect on [LinkedIn](https://www.linkedin.com/in/subinvidhu/) 👋!
 
 ## 🛠️ Projects
 
