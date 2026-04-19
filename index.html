@@ -4,771 +4,988 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Subin S — ML Engineer · Medical Imaging AI · Generative AI</title>
-  <meta name="description" content="ML Engineer with 4+ years building production-grade deep learning and Generative AI systems for clinical environments. Kerala, India." />
-  <meta property="og:title" content="Subin S — ML Engineer · Medical Imaging AI" />
-  <meta property="og:description" content="Building clinical AI that ships to hospitals in India, UK, France & US." />
-  <meta property="og:type" content="website" />
+  <meta name="description" content="ML Engineer with 4+ years building production-grade deep learning and Generative AI systems for clinical environments." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --navy: #0B1F3A;
-      --navy-mid: #112847;
-      --teal: #0EA5A0;
-      --teal-light: #5ECFCB;
-      --cream: #F5F0E8;
-      --off: #F9F6F1;
-      --muted: #7A8494;
-      --border: rgba(14,165,160,0.18);
-      --card-bg: rgba(255,255,255,0.92);
+      --bg: #04070f;
+      --bg2: #070b16;
+      --surface: #0a1020;
+      --card: #0d1326;
+      --border: rgba(0,210,210,0.09);
+      --borderb: rgba(0,210,210,0.26);
+      --teal: #00d4d4;
+      --teal2: #00ffee;
+      --violet: oklch(0.60 0.16 275);
+      --gold: #f5c842;
+      --text: #dce8f8;
+      --muted: #4a6282;
+      --muted2: #7e9ab8;
+      --ff-display: 'Bebas Neue', sans-serif;
+      --ff-head: 'Space Grotesk', sans-serif;
+      --ff-body: 'DM Sans', sans-serif;
+      --ff-mono: 'JetBrains Mono', monospace;
     }
-
     html { scroll-behavior: smooth; }
+    body { font-family: var(--ff-body); background: var(--bg); color: var(--text); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 2px; }
 
-    body {
-      font-family: 'Outfit', sans-serif;
-      background: var(--off);
-      color: var(--navy);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* NOISE OVERLAY */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      opacity: 0.03;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* NAV */
+    /* ── NAV ── */
     nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.25rem 3rem;
-      background: var(--navy);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid rgba(14,165,160,0.25);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 3rem;
+      background: rgba(4,7,15,0.75); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
     }
-    .nav-logo {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.4rem;
-      color: var(--cream);
-      letter-spacing: -0.02em;
-      text-decoration: none;
-    }
+    .nav-logo { font-family: var(--ff-display); font-size: 1.5rem; color: var(--text); text-decoration: none; letter-spacing: 0.06em; white-space: nowrap; }
+    .nav-logo span { color: var(--text); }
     .nav-logo span { color: var(--teal); }
-    .nav-links { display: flex; gap: 2.25rem; list-style: none; }
-    .nav-links a {
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: rgba(245,240,232,0.55);
-      text-decoration: none;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--teal-light); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: var(--ff-mono); font-size: 0.68rem; color: var(--muted); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta { font-family: var(--ff-mono); font-size: 0.68rem; color: var(--teal); border: 1px solid var(--borderb); padding: 0.45rem 1.1rem; border-radius: 4px; text-decoration: none; letter-spacing: 0.08em; transition: background 0.2s, color 0.2s; }
+    .nav-cta:hover { background: var(--teal); color: var(--bg); }
 
-    /* HERO */
-    .hero-wrap { background: var(--navy); position: relative; z-index: 1; }
-    .hero {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 6rem 3rem 5.5rem;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 4rem;
-      align-items: center;
-    }
-    .hero-eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--teal);
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
+    /* ── HERO ── */
+    .hero-wrap { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
+    #hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+    .hero-inner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 9rem 3rem 5rem; width: 100%; display: grid; grid-template-columns: 1fr 260px; gap: 4rem; align-items: center; }
+    .hero-left { min-width: 0; grid-column: 1; }
+    .hero-right { grid-column: 2; display: flex; flex-direction: column; gap: 1.5rem; align-items: stretch; }
+    .hero-eyebrow { font-family: var(--ff-mono); font-size: 0.68rem; color: var(--teal); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+    .hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--teal); flex-shrink: 0; }
+
+    /* THE NAME */
     .hero-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(3rem, 5.5vw, 4.5rem);
-      color: var(--cream);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.6rem;
+      font-family: var(--ff-display);
+      font-size: clamp(4rem, 8.5vw, 8.5rem);
+      line-height: 0.9;
+      letter-spacing: 0.06em;
+      color: var(--text);
+      white-space: nowrap;
+      margin-bottom: 0.15em;
     }
-    .hero-name em { color: var(--teal); font-style: italic; }
-    .hero-role {
-      font-size: 1.05rem;
-      color: rgba(245,240,232,0.55);
-      font-weight: 300;
-      line-height: 1.7;
-      margin-bottom: 2rem;
-    }
-    .hero-role strong { color: var(--teal-light); font-weight: 500; }
-    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--teal);
-      color: var(--navy);
-      padding: 0.75rem 1.75rem;
-      border-radius: 5px;
-      font-size: 0.83rem;
-      font-weight: 600;
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      transition: background 0.2s, transform 0.15s;
-      display: inline-block;
-    }
-    .btn-primary:hover { background: var(--teal-light); transform: translateY(-1px); }
-    .btn-outline {
-      border: 1px solid rgba(14,165,160,0.45);
-      color: var(--teal-light);
-      padding: 0.75rem 1.75rem;
-      border-radius: 5px;
-      font-size: 0.83rem;
-      font-weight: 500;
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      transition: border-color 0.2s, color 0.2s;
-      display: inline-block;
-    }
-    .btn-outline:hover { border-color: var(--teal); color: var(--cream); }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: rgba(14,165,160,0.18);
-      border: 1px solid rgba(14,165,160,0.18);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .stat {
-      background: rgba(255,255,255,0.04);
-      padding: 1.6rem 1.4rem;
-      transition: background 0.2s;
-    }
-    .stat:hover { background: rgba(255,255,255,0.07); }
-    .stat-num {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2.4rem;
-      color: var(--teal);
-      line-height: 1;
-      margin-bottom: 0.4rem;
-    }
-    .stat-label {
-      font-size: 0.76rem;
-      color: rgba(245,240,232,0.45);
-      font-weight: 400;
-      line-height: 1.5;
+    .hero-name .accent {
+      color: var(--text);
     }
 
-    /* SECTION SHARED */
-    .section-wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 5rem 3rem;
+    .hero-sub-row { display: flex; align-items: flex-start; gap: 4rem; margin-top: 1.5rem; flex-wrap: wrap; }
+    @media (max-width: 900px) { .hero-inner { grid-template-columns: 1fr; } .hero-right { grid-column: 1; } .stats-row { grid-template-columns: repeat(4,1fr); } }
+    .hero-role { font-size: 0.95rem; color: var(--muted2); font-weight: 300; line-height: 1.85; max-width: 420px; border-left: 2px solid var(--borderb); padding-left: 1.25rem; }
+    .hero-role strong { color: var(--text); font-weight: 500; }
+    .hero-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.75rem; }
+    .btn-s { background: var(--teal); color: var(--bg); padding: 0.75rem 1.75rem; border-radius: 5px; font-family: var(--ff-mono); font-size: 0.7rem; font-weight: 500; text-decoration: none; letter-spacing: 0.06em; transition: opacity 0.2s, transform 0.15s; }
+    .btn-s:hover { opacity: 0.85; transform: translateY(-1px); }
+    .btn-g { border: 1px solid var(--borderb); color: var(--teal); padding: 0.75rem 1.75rem; border-radius: 5px; font-family: var(--ff-mono); font-size: 0.7rem; text-decoration: none; letter-spacing: 0.06em; transition: border-color 0.2s, color 0.2s; }
+    .btn-g:hover { border-color: var(--teal); color: var(--teal2); }
+
+    /* ARC STATS */
+    .stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    #stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .arc-stat { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; cursor: default; }
+    .arc-stat svg { overflow: visible; }
+    .arc-track { fill: none; stroke: rgba(0,212,212,0.1); stroke-width: 3; }
+    .arc-fill { fill: none; stroke: var(--teal); stroke-width: 3; stroke-linecap: round; transition: stroke-dashoffset 1.5s cubic-bezier(.4,0,.2,1); }
+    .arc-num { font-family: var(--ff-display); font-size: 1.9rem; letter-spacing: 0.04em; fill: var(--teal); }
+    .arc-label { font-family: var(--ff-mono); font-size: 0.58rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; text-align: center; max-width: 100px; line-height: 1.5; }
+    .arc-stat { background: rgba(0,212,212,0.03); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 0.5rem; }
+
+    /* ── AIRA SPOTLIGHT ── */
+    .aira-wrap { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+    .aira-wrap::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(0,212,212,0.04), transparent); }
+    .aira-inner { max-width: 1200px; margin: 0 auto; padding: 6rem 3rem; display: grid; grid-template-columns: 1fr 540px; gap: 5rem; align-items: start; }
+    .aira-badge { display: inline-flex; align-items: center; gap: 0.6rem; background: rgba(0,212,212,0.07); border: 1px solid var(--borderb); color: var(--teal); font-family: var(--ff-mono); font-size: 0.63rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.38rem 0.9rem; border-radius: 100px; margin-bottom: 1.5rem; }
+    .live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); animation: blink 1.4s ease-in-out infinite; }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.2;} }
+    .aira-title { font-family: var(--ff-display); font-size: clamp(2rem, 3.8vw, 3.8rem); letter-spacing: 0.05em; line-height: 0.95; margin-bottom: 1.25rem; color: var(--text); }
+    .aira-title .t { color: var(--teal); }
+    .aira-desc { font-size: 0.93rem; color: var(--muted2); line-height: 1.82; margin-bottom: 1.75rem; }
+    .aira-metrics { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.75rem; }
+    .chip { background: rgba(0,212,212,0.06); border: 1px solid rgba(0,212,212,0.2); color: var(--teal); font-family: var(--ff-mono); font-size: 0.65rem; padding: 0.35rem 0.8rem; border-radius: 4px; letter-spacing: 0.04em; }
+    .aira-stack-label { font-family: var(--ff-mono); font-size: 0.6rem; color: var(--muted); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .aira-stack { font-family: var(--ff-mono); font-size: 0.7rem; color: var(--muted2); line-height: 1.8; }
+
+    /* CT VIEWER */
+    .ct-viewer {
+      border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,212,212,0.15);
+      background: #01040b;
+      box-shadow: 0 0 60px rgba(0,212,212,0.07), 0 40px 80px rgba(0,0,0,0.7);
       position: relative;
-      z-index: 1;
+      transform: perspective(1200px) rotateY(-4deg) rotateX(2deg);
+      transition: transform 0.4s ease;
     }
-    .section-tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--teal);
-      letter-spacing: 0.16em;
+    .ct-viewer:hover { transform: perspective(1200px) rotateY(0deg) rotateX(0deg); }
+    .ct-viewer-bar {
+      background: #080e1c; border-bottom: 1px solid rgba(0,212,212,0.1);
+      padding: 0.55rem 0.85rem; display: flex; align-items: center; gap: 0.6rem;
+      font-family: var(--ff-mono); font-size: 0.6rem; color: var(--muted);
+    }
+    .ct-traffic { display: flex; gap: 5px; }
+    .ct-traffic span { width: 10px; height: 10px; border-radius: 50%; }
+    .ct-traffic span:nth-child(1) { background: #ff5f57; }
+    .ct-traffic span:nth-child(2) { background: #febc2e; }
+    .ct-traffic span:nth-child(3) { background: #28c840; }
+    .ct-title-bar { flex: 1; text-align: center; letter-spacing: 0.12em; text-transform: uppercase; }
+    .ct-pred-btn {
+      background: rgba(0,212,212,0.1); border: 1px solid rgba(0,212,212,0.3);
+      color: var(--teal); font-family: var(--ff-mono); font-size: 0.6rem; letter-spacing: 0.1em;
+      padding: 0.28rem 0.7rem; border-radius: 4px; cursor: pointer; transition: background 0.2s;
       text-transform: uppercase;
-      margin-bottom: 0.7rem;
     }
-    .section-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2.2rem;
-      color: var(--navy);
-      letter-spacing: -0.02em;
-      margin-bottom: 2.5rem;
-    }
+    .ct-pred-btn.active { background: rgba(0,212,212,0.25); }
+    #ct-canvas { display: block; width: 100%; cursor: grab; }
+    #ct-canvas:active { cursor: grabbing; }
+    .ct-footer { background: #080e1c; border-top: 1px solid rgba(0,212,212,0.1); padding: 0.5rem 0.85rem; display: flex; align-items: center; gap: 0.75rem; }
+    .ct-hud-info { font-family: var(--ff-mono); font-size: 0.58rem; color: var(--muted); white-space: nowrap; }
+    .ct-slider { flex: 1; -webkit-appearance: none; height: 2px; background: rgba(0,212,212,0.15); border-radius: 1px; outline: none; cursor: pointer; }
+    .ct-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 12px; border-radius: 50%; background: var(--teal); border: 2px solid #01040b; box-shadow: 0 0 8px var(--teal); }
 
-    /* SKILLS */
-    .skills-bg { background: var(--cream); position: relative; z-index: 1; }
-    .skills-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-    .skill-pill {
-      background: white;
-      border: 1px solid var(--border);
-      padding: 0.45rem 1.1rem;
-      border-radius: 100px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--navy);
-      transition: border-color 0.2s, color 0.2s, transform 0.15s;
-      cursor: default;
-    }
-    .skill-pill:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-1px); }
-    .skill-pill.featured {
-      background: var(--navy);
-      color: var(--teal-light);
-      border-color: var(--navy);
-    }
-    .skill-pill.featured:hover { background: var(--navy-mid); transform: translateY(-1px); }
+    /* ── SIMARA 3D ── */
+    .simara-wrap { background: var(--bg); border-top: 1px solid var(--border); padding: 6rem 0; }
+    .simara-inner { max-width: 1200px; margin: 0 auto; padding: 0 3rem; display: grid; grid-template-columns: 480px 1fr; gap: 5rem; align-items: center; }
+    #rag-canvas { border-radius: 12px; border: 1px solid var(--border); background: #030710; display: block; box-shadow: 0 0 50px rgba(0,120,255,0.06); transform: perspective(1200px) rotateY(4deg) rotateX(-2deg); transition: transform 0.4s; }
+    #rag-canvas:hover { transform: perspective(1200px) rotateY(0deg) rotateX(0deg); }
 
-    /* PROJECTS */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
+    /* ── PROJECTS ── */
+    .projects-wrap { background: var(--bg2); border-top: 1px solid var(--border); padding: 6rem 0; }
+    .sec-inner { max-width: 1200px; margin: 0 auto; padding: 0 3rem; }
+    .sec-eye { font-family: var(--ff-mono); font-size: 0.67rem; color: var(--teal); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.7rem; display: flex; align-items: center; gap: 0.75rem; }
+    .sec-eye::before { content: ''; width: 28px; height: 1px; background: var(--teal); flex-shrink: 0; }
+    .sec-title { font-family: var(--ff-head); font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 2.5rem; color: var(--text); }
+    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .p-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 1.6rem; display: flex; flex-direction: column;
+      transform-style: preserve-3d; transform: perspective(900px);
+      transition: border-color 0.3s, box-shadow 0.3s;
+      position: relative; overflow: hidden;
     }
-    .project-card {
-      background: var(--card-bg);
-      border: 1px solid rgba(11,31,58,0.09);
-      border-radius: 10px;
-      padding: 1.6rem;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-      display: flex;
-      flex-direction: column;
-    }
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--teal);
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-    .project-card:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(11,31,58,0.1); }
-    .project-card:hover::before { opacity: 1; }
-    .project-tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.63rem;
-      color: var(--teal);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.55rem;
-    }
-    .project-name {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 0.55rem;
-      line-height: 1.35;
-    }
-    .project-desc {
-      font-size: 0.82rem;
-      color: var(--muted);
-      line-height: 1.65;
-      margin-bottom: 1rem;
-      flex: 1;
-    }
-    .project-metrics { margin-bottom: 0.75rem; }
-    .project-metric {
-      display: inline-block;
-      background: rgba(14,165,160,0.07);
-      border: 1px solid rgba(14,165,160,0.2);
-      color: var(--teal);
-      font-family: 'DM Mono', monospace;
-      font-size: 0.67rem;
-      padding: 0.22rem 0.55rem;
-      border-radius: 4px;
-      margin-right: 0.35rem;
-      margin-bottom: 0.35rem;
-    }
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: var(--teal);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
-      margin-top: auto;
-    }
-    .project-link:hover { border-bottom-color: var(--teal); }
-    .project-link svg { width: 11px; height: 11px; }
+    .p-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--teal), transparent); opacity: 0; transition: opacity 0.3s; }
+    .p-card:hover { border-color: var(--borderb); box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 30px rgba(0,212,212,0.04); }
+    .p-card:hover::before { opacity: 1; }
+    .p-card::after { content: ''; position: absolute; inset: 0; border-radius: 12px; background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(0,212,212,0.05), transparent 65%); opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+    .p-card:hover::after { opacity: 1; }
+    .p-tag { font-family: var(--ff-mono); font-size: 0.6rem; color: var(--teal); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.6rem; }
+    .p-name { font-family: var(--ff-head); font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.6rem; line-height: 1.3; letter-spacing: -0.02em; }
+    .p-desc { font-size: 0.81rem; color: var(--muted2); line-height: 1.7; margin-bottom: 1rem; flex: 1; }
+    .p-chips { margin-bottom: 0.8rem; }
+    .p-chip { display: inline-block; background: rgba(0,212,212,0.05); border: 1px solid rgba(0,212,212,0.15); color: var(--teal); font-family: var(--ff-mono); font-size: 0.6rem; padding: 0.18rem 0.5rem; border-radius: 3px; margin: 0 0.25rem 0.25rem 0; }
+    .p-link { display: inline-flex; align-items: center; gap: 0.35rem; font-family: var(--ff-mono); font-size: 0.68rem; color: var(--teal); text-decoration: none; margin-top: auto; transition: gap 0.2s; }
+    .p-link:hover { gap: 0.55rem; }
+    .p-link svg { width: 11px; height: 11px; }
 
-    /* FEATURED card spans full width */
-    .project-card.featured {
-      grid-column: 1 / -1;
-      background: var(--navy);
-      border-color: rgba(14,165,160,0.25);
-      flex-direction: row;
-      gap: 3rem;
-      align-items: flex-start;
-    }
-    .project-card.featured::before { background: var(--teal-light); opacity: 1; }
-    .project-card.featured .project-tag { color: var(--teal-light); }
-    .project-card.featured .project-name { color: var(--cream); font-size: 1.15rem; }
-    .project-card.featured .project-desc { color: rgba(245,240,232,0.55); }
-    .project-card.featured .project-metric {
-      background: rgba(14,165,160,0.12);
-      border-color: rgba(14,165,160,0.3);
-    }
-    .project-card.featured .project-link { color: var(--teal-light); }
-    .featured-col { flex: 1; display: flex; flex-direction: column; }
-    .featured-stack-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.63rem;
-      color: rgba(245,240,232,0.35);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-    .featured-stack {
-      font-size: 0.8rem;
-      color: rgba(245,240,232,0.45);
-      line-height: 1.7;
-    }
+    /* ── SKILLS ── */
+    .skills-wrap { background: var(--bg); border-top: 1px solid var(--border); padding: 6rem 0; }
+    .sk-cats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+    .sk-cat-label { font-family: var(--ff-mono); font-size: 0.6rem; color: var(--muted); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .sk-pills { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .sk-pill { border: 1px solid var(--border); color: var(--muted2); padding: 0.38rem 0.9rem; border-radius: 100px; font-size: 0.77rem; transition: border-color 0.2s, color 0.2s, transform 0.15s; cursor: default; }
+    .sk-pill:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-2px); }
+    .sk-pill.hi { border-color: rgba(0,212,212,0.3); color: var(--teal); background: rgba(0,212,212,0.05); }
 
-    /* EXPERIENCE */
-    .exp-bg { background: var(--cream); position: relative; z-index: 1; }
-    .timeline { position: relative; padding-left: 0; }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 8px; bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--teal) 60%, transparent);
-    }
-    .exp-item {
-      padding-left: 2.25rem;
-      margin-bottom: 2.5rem;
-      position: relative;
-    }
-    .exp-item::before {
-      content: '';
-      position: absolute;
-      left: -5px; top: 7px;
-      width: 12px; height: 12px;
-      border-radius: 50%;
-      background: var(--teal);
-      border: 2px solid var(--cream);
-    }
-    .exp-period {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--teal);
-      letter-spacing: 0.08em;
-      margin-bottom: 0.3rem;
-    }
-    .exp-title { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.15rem; }
-    .exp-company { font-size: 0.83rem; color: var(--muted); margin-bottom: 0.6rem; }
-    .exp-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.7; max-width: 680px; }
+    /* ── EXPERIENCE ── */
+    .exp-wrap { background: var(--bg2); border-top: 1px solid var(--border); padding: 6rem 0; }
+    .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+    .timeline { position: relative; padding-left: 1.5rem; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--teal), transparent); }
+    .exp-item { position: relative; margin-bottom: 2.75rem; }
+    .exp-item::before { content: ''; position: absolute; left: -2rem; top: 5px; width: 9px; height: 9px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 14px var(--teal); }
+    .exp-period { font-family: var(--ff-mono); font-size: 0.63rem; color: var(--teal); letter-spacing: 0.1em; margin-bottom: 0.35rem; }
+    .exp-title { font-family: var(--ff-head); font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem; letter-spacing: -0.02em; }
+    .exp-company { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.6rem; }
+    .exp-desc { font-size: 0.82rem; color: var(--muted2); line-height: 1.72; }
+    .ach-list { display: flex; flex-direction: column; gap: 0.9rem; }
+    .ach-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.25rem; display: flex; align-items: flex-start; gap: 1rem; transition: border-color 0.2s, transform 0.2s; }
+    .ach-card:hover { border-color: var(--borderb); transform: translateX(4px); }
+    .ach-ico { width: 34px; height: 34px; border-radius: 7px; background: rgba(0,212,212,0.07); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ach-ico svg { width: 15px; height: 15px; stroke: var(--teal); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .ach-txt { font-size: 0.79rem; color: var(--muted2); line-height: 1.6; }
+    .ach-txt strong { display: block; color: var(--text); font-weight: 600; margin-bottom: 0.15rem; font-size: 0.81rem; }
+    .ach-txt a { color: var(--teal); text-decoration: none; font-family: var(--ff-mono); font-size: 0.65rem; }
 
-    /* ACHIEVEMENTS */
-    .ach-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
-      margin-top: 3rem;
-    }
-    .ach-card {
-      background: var(--card-bg);
-      border: 1px solid rgba(11,31,58,0.09);
-      border-radius: 9px;
-      padding: 1.2rem 1.4rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      transition: transform 0.2s;
-    }
-    .ach-card:hover { transform: translateY(-2px); }
-    .ach-icon {
-      width: 38px; height: 38px;
-      border-radius: 8px;
-      background: rgba(14,165,160,0.1);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .ach-icon svg { width: 18px; height: 18px; stroke: var(--teal); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-    .ach-text { font-size: 0.8rem; color: var(--muted); line-height: 1.55; }
-    .ach-text strong { color: var(--navy); font-weight: 600; display: block; margin-bottom: 0.2rem; font-size: 0.83rem; }
+    /* ── CONTACT ── */
+    .contact-wrap { background: var(--bg); border-top: 1px solid var(--border); padding: 7rem 0; position: relative; overflow: hidden; }
+    .contact-wrap::before { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 600px; height: 300px; background: radial-gradient(ellipse, rgba(0,212,212,0.07), transparent 70%); pointer-events: none; }
+    .contact-inner { position: relative; z-index: 1; text-align: center; max-width: 600px; margin: 0 auto; padding: 0 3rem; }
+    .c-title { font-family: var(--ff-display); font-size: clamp(3rem, 6vw, 5.5rem); letter-spacing: 0.05em; line-height: 0.95; margin-bottom: 1.25rem; color: var(--text); }
+    .c-title span { color: var(--teal); }
+    .c-sub { font-size: 0.92rem; color: var(--muted2); line-height: 1.78; margin-bottom: 2.5rem; }
+    .c-links { display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; }
+    .c-link { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--card); border: 1px solid var(--border); color: var(--muted2); text-decoration: none; padding: 0.75rem 1.3rem; border-radius: 8px; font-size: 0.82rem; transition: border-color 0.2s, color 0.2s, transform 0.2s; }
+    .c-link:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-2px); }
+    .c-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    footer { background: var(--bg2); border-top: 1px solid var(--border); text-align: center; padding: 1.75rem; font-family: var(--ff-mono); font-size: 0.65rem; color: var(--muted); }
 
-    /* CONTACT */
-    .contact-bg { background: var(--navy); position: relative; z-index: 1; }
-    .contact-bg .section-title { color: var(--cream); }
-    .contact-bg .section-tag { color: var(--teal); }
-    .contact-sub {
-      color: rgba(245,240,232,0.5);
-      font-size: 0.9rem;
-      line-height: 1.7;
-      max-width: 480px;
-      margin-bottom: 2rem;
-    }
-    .contact-links { display: flex; gap: 0.85rem; flex-wrap: wrap; }
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(14,165,160,0.2);
-      color: rgba(245,240,232,0.85);
-      text-decoration: none;
-      padding: 0.75rem 1.3rem;
-      border-radius: 7px;
-      font-size: 0.83rem;
-      font-weight: 400;
-      transition: background 0.2s, border-color 0.2s, color 0.2s;
-    }
-    .contact-link:hover {
-      background: rgba(14,165,160,0.15);
-      border-color: var(--teal);
-      color: var(--cream);
-    }
-    .contact-link svg { width: 15px; height: 15px; stroke: var(--teal); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal.d1 { transition-delay: 0.08s; } .reveal.d2 { transition-delay: 0.18s; } .reveal.d3 { transition-delay: 0.28s; }
 
-    /* FOOTER */
-    footer {
-      background: var(--navy);
-      border-top: 1px solid rgba(14,165,160,0.12);
-      text-align: center;
-      padding: 1.75rem 3rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      color: rgba(245,240,232,0.25);
-    }
-
-    /* FADE-IN ANIMATIONS */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(18px);
-      animation: fadeUp 0.55s ease forwards;
-    }
-    @keyframes fadeUp { to { opacity: 1; transform: none; } }
-    .d1 { animation-delay: 0.05s; }
-    .d2 { animation-delay: 0.15s; }
-    .d3 { animation-delay: 0.25s; }
-    .d4 { animation-delay: 0.35s; }
-    .d5 { animation-delay: 0.45s; }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; padding: 4rem 2rem 3.5rem; gap: 3rem; }
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1000px) {
+      .aira-inner, .simara-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .simara-inner { grid-template-columns: 1fr; }
       .projects-grid { grid-template-columns: 1fr 1fr; }
-      .project-card.featured { flex-direction: column; gap: 1.5rem; }
+      .sk-cats { grid-template-columns: 1fr; gap: 2rem; }
+      .exp-grid { grid-template-columns: 1fr; }
       nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
     }
     @media (max-width: 600px) {
-      .nav-links { display: none; }
       .projects-grid { grid-template-columns: 1fr; }
-      .project-card.featured { grid-column: span 1; }
-      .section-wrap { padding: 3.5rem 1.5rem; }
-      .hero { padding: 3rem 1.5rem; }
-      footer { padding: 1.5rem; }
+      .sec-inner, .aira-inner, .simara-inner { padding: 0 1.5rem; }
+      .aira-inner { padding: 4rem 1.5rem; }
+      .hero-inner { padding: 8rem 1.5rem 4rem; }
+      .hero-name { font-size: clamp(5rem, 20vw, 9rem); }
     }
   </style>
+  <template id="__bundler_thumbnail" data-bg-color="#04070f">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#04070f"/>
+      <text x="80" y="320" font-family="sans-serif" font-weight="900" font-size="220" fill="#dce8f8" letter-spacing="8">SUBIN</text>
+      <text x="80" y="520" font-family="sans-serif" font-weight="900" font-size="220" fill="#dce8f8" letter-spacing="8">S.</text>
+      <circle cx="950" cy="400" r="180" fill="none" stroke="#00d4d4" stroke-width="1.5" opacity="0.2"/>
+      <ellipse cx="900" cy="390" rx="34" ry="54" fill="none" stroke="#00d4d4" stroke-width="2" opacity="0.7"/>
+      <ellipse cx="1000" cy="390" rx="34" ry="54" fill="none" stroke="#00d4d4" stroke-width="2" opacity="0.7"/>
+      <circle cx="895" cy="372" r="6" fill="#fff" opacity="0.95"/>
+      <circle cx="912" cy="400" r="5" fill="#fff" opacity="0.9"/>
+      <line x1="80" y1="555" x2="420" y2="555" stroke="#00d4d4" stroke-width="2" opacity="0.3"/>
+    </svg>
+  </template>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-logo">Subin<span>.</span>S</a>
-    <ul class="nav-links">
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">SUBIN S</a>
+  <ul class="nav-links">
+    <li><a href="#aira">AIRA</a></li>
+    <li><a href="#simara">SIMARA</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+  </ul>
+  <a href="mailto:subinvidhuu@gmail.com" class="nav-cta">Get in Touch</a>
+</nav>
 
-  <!-- HERO -->
-  <div class="hero-wrap">
-    <div class="hero">
-      <div>
-        <p class="hero-eyebrow fade-in d1">Kerala, India &nbsp;·&nbsp; Open to international relocation</p>
-        <h1 class="hero-name fade-in d2">Subin <em>S</em></h1>
-        <p class="hero-role fade-in d3">
-          <strong>ML Engineer &nbsp;·&nbsp; Generative AI Engineer</strong><br>
-          Medical Imaging AI &nbsp;·&nbsp; RAG &amp; LLM Systems<br>
-          Building clinical AI that ships to hospitals in India, UK, France &amp; US
-        </p>
-        <div class="hero-btns fade-in d4">
-          <a href="https://www.linkedin.com/in/subinvidhu/" target="_blank" rel="noopener" class="btn-primary">LinkedIn</a>
-          <a href="https://github.com/Subin-Vidhu" target="_blank" rel="noopener" class="btn-outline">GitHub</a>
-          <a href="mailto:subinvidhuu@gmail.com" class="btn-outline">Get in touch</a>
-        </div>
+<!-- HERO -->
+<div class="hero-wrap">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-inner">
+    <div class="hero-left">
+    <p class="hero-eyebrow">Kerala, India &nbsp;·&nbsp; Open to International Relocation</p>
+    <div class="hero-name">SUBIN S</div>
+    <div class="hero-sub-row">
+      <p class="hero-role">
+        <strong>ML Engineer · Generative AI Engineer</strong><br>
+        Medical Imaging AI · RAG & LLM Systems<br>
+        Clinical AI deployed to hospitals in India, UK, France & US
+      </p>
+    </div>
+    <div class="hero-btns">
+      <a href="https://www.linkedin.com/in/subinvidhu/" target="_blank" rel="noopener" class="btn-s">LinkedIn</a>
+      <a href="https://github.com/Subin-Vidhu" target="_blank" rel="noopener" class="btn-g">GitHub</a>
+      <a href="mailto:subinvidhuu@gmail.com" class="btn-g">Email</a>
+    </div>
+
+    </div><!-- /hero-left -->
+    <div class="hero-right stats-row" id="stats-row">
+      <div class="arc-stat">
+        <svg width="100" height="100" viewBox="0 0 100 100">
+          <circle class="arc-track" cx="50" cy="50" r="42"/>
+          <circle class="arc-fill" id="arc0" cx="50" cy="50" r="42" stroke-dasharray="263.8" stroke-dashoffset="263.8" transform="rotate(-90 50 50)"/>
+          <text class="arc-num" x="50" y="50" text-anchor="middle" dominant-baseline="central" id="cnt0">0+</text>
+        </svg>
+        <span class="arc-label">Years Production Medical AI</span>
       </div>
-      <div class="hero-stats fade-in d4">
-        <div class="stat">
-          <div class="stat-num">4+</div>
-          <div class="stat-label">Years in production medical AI</div>
+      <div class="arc-stat">
+        <svg width="100" height="100" viewBox="0 0 100 100">
+          <circle class="arc-track" cx="50" cy="50" r="42"/>
+          <circle class="arc-fill" id="arc1" cx="50" cy="50" r="42" stroke-dasharray="263.8" stroke-dashoffset="263.8" transform="rotate(-90 50 50)"/>
+          <text class="arc-num" x="50" y="50" text-anchor="middle" dominant-baseline="central" id="cnt1">0%</text>
+        </svg>
+        <span class="arc-label">Renal Seg. Accuracy FDA Trial</span>
+      </div>
+      <div class="arc-stat">
+        <svg width="100" height="100" viewBox="0 0 100 100">
+          <circle class="arc-track" cx="50" cy="50" r="42"/>
+          <circle class="arc-fill" id="arc2" cx="50" cy="50" r="42" stroke-dasharray="263.8" stroke-dashoffset="263.8" transform="rotate(-90 50 50)"/>
+          <text class="arc-num" x="50" y="50" text-anchor="middle" dominant-baseline="central" id="cnt2">0%</text>
+        </svg>
+        <span class="arc-label">RAG Retrieval Gain</span>
+      </div>
+      <div class="arc-stat">
+        <svg width="100" height="100" viewBox="0 0 100 100">
+          <circle class="arc-track" cx="50" cy="50" r="42"/>
+          <circle class="arc-fill" id="arc3" cx="50" cy="50" r="42" stroke-dasharray="263.8" stroke-dashoffset="263.8" transform="rotate(-90 50 50)"/>
+          <text class="arc-num" x="50" y="50" text-anchor="middle" dominant-baseline="central" id="cnt3">0+</text>
+        </svg>
+        <span class="arc-label">Studies / Day Multi-institution</span>
+      </div>
+    </div><!-- /hero-right -->
+  </div>
+</div>
+
+<!-- AIRA SPOTLIGHT -->
+<section class="aira-wrap" id="aira">
+  <div class="aira-inner">
+    <div class="reveal">
+      <div class="aira-badge"><span class="live-dot"></span> Featured — FDA Validation Phase</div>
+      <h2 class="aira-title">AIRA<br><span class="t">RENAL AI</span><br>SEGMENTATION</h2>
+      <p class="aira-desc">Fine-tuned U-Net / TensorFlow pipeline for automated kidney and renal calculi (stone) segmentation, deployed live in hospital environments. Achieved a 15% accuracy gain through custom DICOM preprocessing. Currently in active FDA validation with 40,000+ annotated CT images.</p>
+      <div class="aira-metrics">
+        <span class="chip">92% Dice Accuracy</span>
+        <span class="chip">40,000+ CT Images</span>
+        <span class="chip">FDA Validation</span>
+        <span class="chip">+15% via Preprocessing</span>
+        <span class="chip">Live Hospital Deployment</span>
+      </div>
+      <p class="aira-stack-label">Stack</p>
+      <p class="aira-stack">TensorFlow · U-Net · PyTorch · DICOM · OpenCV · FastAPI · Docker · AWS</p>
+      <br>
+      <a href="https://aira.protosonline.in" target="_blank" rel="noopener" class="btn-s" style="margin-top:1.5rem;display:inline-block;">View Live Demo →</a>
+    </div>
+    <div class="reveal d2">
+      <div class="ct-viewer">
+        <div class="ct-viewer-bar">
+          <div class="ct-traffic"><span></span><span></span><span></span></div>
+          <div class="ct-title-bar">AIRA · DICOM VIEWER · AXIAL</div>
+          <button class="ct-pred-btn active" id="pred-btn" onclick="togglePred()">AI ON</button>
         </div>
-        <div class="stat">
-          <div class="stat-num">92%</div>
-          <div class="stat-label">Renal segmentation accuracy &middot; FDA trial</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">60%</div>
-          <div class="stat-label">RAG retrieval improvement over keyword search</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">50+</div>
-          <div class="stat-label">Radiology studies/day &middot; multi-institution</div>
+        <canvas id="ct-canvas" width="540" height="420"></canvas>
+        <div class="ct-footer">
+          <span class="ct-hud-info" id="hud-info">SL: 48 / W:400 L:40</span>
+          <input type="range" class="ct-slider" id="slice-slider" min="1" max="120" value="48">
+          <span class="ct-hud-info" id="hud-conf">CONF: —</span>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- SKILLS -->
-  <section class="skills-bg" id="skills">
-    <div class="section-wrap">
-      <p class="section-tag">Technical Stack</p>
-      <h2 class="section-title">Skills</h2>
-      <div class="skills-grid">
-        <span class="skill-pill featured">TensorFlow</span>
-        <span class="skill-pill featured">PyTorch</span>
-        <span class="skill-pill featured">LangChain</span>
-        <span class="skill-pill featured">Weaviate</span>
-        <span class="skill-pill featured">RAG Pipelines</span>
-        <span class="skill-pill featured">FastAPI</span>
-        <span class="skill-pill">Python</span>
-        <span class="skill-pill">JavaScript</span>
-        <span class="skill-pill">Go</span>
-        <span class="skill-pill">SQL</span>
-        <span class="skill-pill">Keras</span>
-        <span class="skill-pill">Scikit-learn</span>
-        <span class="skill-pill">OpenCV</span>
-        <span class="skill-pill">U-Net</span>
-        <span class="skill-pill">CNN Architectures</span>
-        <span class="skill-pill">LLM Fine-tuning</span>
-        <span class="skill-pill">Prompt Engineering</span>
-        <span class="skill-pill">Vector Databases</span>
-        <span class="skill-pill">OpenAI API</span>
-        <span class="skill-pill">AWS</span>
-        <span class="skill-pill">Docker</span>
-        <span class="skill-pill">Nginx</span>
-        <span class="skill-pill">Caddy</span>
-        <span class="skill-pill">Linux</span>
-        <span class="skill-pill">DICOM</span>
-        <span class="skill-pill">Medical Imaging</span>
-        <span class="skill-pill">PostgreSQL</span>
-        <span class="skill-pill">MySQL</span>
-        <span class="skill-pill">NumPy &amp; Pandas</span>
-        <span class="skill-pill">Agile Methodology</span>
+<!-- SIMARA 3D RAG -->
+<section class="simara-wrap" id="simara">
+  <div class="simara-inner">
+    <div class="reveal">
+      <canvas id="rag-canvas" width="480" height="400"></canvas>
+    </div>
+    <div class="reveal d2">
+      <div class="aira-badge" style="background:rgba(0,100,255,0.07); border-color:rgba(0,100,255,0.3); color:#6ab4ff;"><span class="live-dot" style="background:#6ab4ff;"></span> Generative AI · RAG System</div>
+      <h2 class="sec-title" style="font-family:var(--ff-display);font-size:clamp(2.5rem,4vw,4.2rem);letter-spacing:0.05em;margin-bottom:1.25rem;">SIMARA<br><span style="color:#6ab4ff;">MEDICAL GENAI</span></h2>
+      <p style="font-size:0.93rem;color:var(--muted2);line-height:1.82;margin-bottom:1.75rem;">RAG pipeline over 100,000+ licensed Radiopaedia articles using LangChain and Weaviate. Delivers hallucination-reduced clinical query resolution for radiologists with sub-second responses. 60% retrieval improvement over keyword search.</p>
+      <div class="aira-metrics">
+        <span class="chip" style="border-color:rgba(0,100,255,0.3);color:#6ab4ff;background:rgba(0,100,255,0.06);">60% Retrieval Gain</span>
+        <span class="chip" style="border-color:rgba(0,100,255,0.3);color:#6ab4ff;background:rgba(0,100,255,0.06);">Sub-second Response</span>
+        <span class="chip" style="border-color:rgba(0,100,255,0.3);color:#6ab4ff;background:rgba(0,100,255,0.06);">100k+ Articles</span>
+        <span class="chip" style="border-color:rgba(0,100,255,0.3);color:#6ab4ff;background:rgba(0,100,255,0.06);">Weaviate Vector DB</span>
+      </div>
+      <p class="aira-stack-label">Stack</p>
+      <p class="aira-stack">LangChain · Weaviate · OpenAI API · FastAPI · Python · Docker</p>
+      <br>
+      <a href="https://simara.protosonline.in" target="_blank" rel="noopener" class="btn-s" style="margin-top:1.5rem;display:inline-block;background:#6ab4ff;color:#03060f;">View Live Demo →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects-wrap" id="projects">
+  <div class="sec-inner">
+    <p class="sec-eye reveal">Live Deployments</p>
+    <h2 class="sec-title reveal d1">Key Projects</h2>
+    <div class="projects-grid">
+      <div class="p-card reveal d1">
+        <p class="p-tag">Teleradiology · Cloud-native · International</p>
+        <p class="p-name">ReVue — Global Radiology Second Opinion</p>
+        <p class="p-desc">Cloud-native teleradiology platform — 50+ studies/day, 6-viewer ecosystem, multi-PACS support, structured PDF reporting. Evaluated by NHS, Paris centres, WCG Clinic.</p>
+        <div class="p-chips"><span class="p-chip">50+ studies/day</span><span class="p-chip">NHS · Paris · WCG</span><span class="p-chip">HIPAA-conscious</span></div>
+        <a href="https://rubyhall-demo.protosonline.in/" target="_blank" rel="noopener" class="p-link">Live Demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+      </div>
+      <div class="p-card reveal d2">
+        <p class="p-tag">Spine AI · Clinical</p>
+        <p class="p-name">VERTEVue — Vertebral Segmentation</p>
+        <p class="p-desc">Automated segmentation of C2, L4, L5, S1 spinal structures from DICOM for real-time clinical diagnostic support. Part of a unified enterprise AI platform.</p>
+        <div class="p-chips"><span class="p-chip">89% accuracy</span><span class="p-chip">Real-time workflow</span></div>
+        <a href="https://vertevue.protosonline.in" target="_blank" rel="noopener" class="p-link">Live Demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+      </div>
+      <div class="p-card reveal d3">
+        <p class="p-tag">Oncology · PET-CT</p>
+        <p class="p-name">SUVue — Whole-Body Tumour Detection</p>
+        <p class="p-desc">Deep learning model for whole-body PET-CT tumour detection supporting early-stage cancer identification. 40% inference time reduction enabling real-time production use.</p>
+        <div class="p-chips"><span class="p-chip">40% faster inference</span><span class="p-chip">Real-time production</span></div>
+        <a href="https://suvue.protosonline.in" target="_blank" rel="noopener" class="p-link">Live Demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+      </div>
+      <div class="p-card reveal d1">
+        <p class="p-tag">No-Code AI · Platform</p>
+        <p class="p-name">diyAI — No-Code ML Platform</p>
+        <p class="p-desc">Platform enabling non-technical clinicians to build, train, and deploy custom ML models with zero programming. Adopted by NHS, Paris, and WCG Clinic.</p>
+        <div class="p-chips"><span class="p-chip">NHS · Paris · WCG</span><span class="p-chip">Zero-code deploy</span></div>
+        <a href="https://diyai.protosonline.in" target="_blank" rel="noopener" class="p-link">Live Demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="section-wrap">
-      <p class="section-tag">Live Deployments</p>
-      <h2 class="section-title">Key Projects</h2>
-      <div class="projects-grid">
-
-        <!-- FEATURED -->
-        <div class="project-card featured">
-          <div class="featured-col">
-            <p class="project-tag">Teleradiology &middot; Cloud-native &middot; International</p>
-            <p class="project-name">ReVue — Global Radiology Second Opinion Clinic</p>
-            <p class="project-desc">Multi-institution cloud-native teleradiology platform processing 50+ studies/day across hospitals in Pune and Mumbai. Features DICOM node management, 6-viewer ecosystem (browser + native), Razorpay payment integration, multi-PACS support (Orthanc/DICOMweb), modality-specific structured reporting with annotated PDF export, and HIPAA-conscious audit trails. Actively evaluated by NHS institutions (UK), Paris-based radiology centres, and WCG Clinic (US).</p>
-            <div class="project-metrics">
-              <span class="project-metric">50+ studies/day</span>
-              <span class="project-metric">Multi-institution</span>
-              <span class="project-metric">NHS &middot; Paris &middot; WCG</span>
-              <span class="project-metric">HIPAA-conscious</span>
-              <span class="project-metric">6-viewer ecosystem</span>
-            </div>
-            <a href="https://rubyhall-demo.protosonline.in/" target="_blank" rel="noopener" class="project-link">
-              Live Demo
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-            </a>
-          </div>
-          <div class="featured-col">
-            <p class="featured-stack-label">Stack</p>
-            <p class="featured-stack">FastAPI &middot; Python &middot; DICOM &middot; Orthanc &middot; DICOMweb &middot; Razorpay &middot; AWS &middot; Docker &middot; Nginx &middot; Caddy</p>
-          </div>
+<!-- SKILLS -->
+<section class="skills-wrap" id="skills">
+  <div class="sec-inner">
+    <p class="sec-eye reveal">Technical Stack</p>
+    <h2 class="sec-title reveal d1">Skills</h2>
+    <div class="sk-cats reveal d2">
+      <div>
+        <p class="sk-cat-label">AI / ML Frameworks</p>
+        <div class="sk-pills">
+          <span class="sk-pill hi">TensorFlow</span><span class="sk-pill hi">PyTorch</span><span class="sk-pill hi">LangChain</span><span class="sk-pill hi">RAG Pipelines</span><span class="sk-pill">Keras</span><span class="sk-pill">U-Net</span><span class="sk-pill">Scikit-learn</span><span class="sk-pill">CNN Architectures</span><span class="sk-pill">LLM Fine-tuning</span><span class="sk-pill">Prompt Engineering</span>
         </div>
-
-        <!-- AIRA -->
-        <div class="project-card">
-          <p class="project-tag">Medical AI &middot; FDA Trial</p>
-          <p class="project-name">AIRA — Renal AI Segmentation</p>
-          <p class="project-desc">Fine-tuned U-Net/TensorFlow pipeline for automated kidney and calculi segmentation deployed in hospitals. 15% accuracy gain via custom preprocessing. Currently in FDA validation phase.</p>
-          <div class="project-metrics">
-            <span class="project-metric">92% accuracy</span>
-            <span class="project-metric">40,000+ images</span>
-            <span class="project-metric">FDA validation</span>
-          </div>
-          <a href="https://aira.protosonline.in" target="_blank" rel="noopener" class="project-link">
-            Live Demo
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </a>
+      </div>
+      <div>
+        <p class="sk-cat-label">Languages & Databases</p>
+        <div class="sk-pills">
+          <span class="sk-pill hi">Python</span><span class="sk-pill">JavaScript</span><span class="sk-pill">Go</span><span class="sk-pill">SQL</span><span class="sk-pill hi">Weaviate</span><span class="sk-pill">Vector Databases</span><span class="sk-pill">PostgreSQL</span><span class="sk-pill">MySQL</span><span class="sk-pill">OpenAI API</span>
         </div>
-
-        <!-- SIMARA -->
-        <div class="project-card">
-          <p class="project-tag">Generative AI &middot; RAG</p>
-          <p class="project-name">SIMARA — Medical GenAI Chatbot</p>
-          <p class="project-desc">RAG pipeline over the full licensed Radiopaedia dataset (100,000+ articles) using LangChain and Weaviate. Delivers hallucination-reduced clinical query resolution for radiologists with sub-second responses.</p>
-          <div class="project-metrics">
-            <span class="project-metric">60% retrieval gain</span>
-            <span class="project-metric">Sub-second responses</span>
-            <span class="project-metric">100k+ articles</span>
-          </div>
-          <a href="https://simara.protosonline.in" target="_blank" rel="noopener" class="project-link">
-            Live Demo
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </a>
+      </div>
+      <div>
+        <p class="sk-cat-label">Infrastructure & Clinical</p>
+        <div class="sk-pills">
+          <span class="sk-pill hi">FastAPI</span><span class="sk-pill">AWS</span><span class="sk-pill">Docker</span><span class="sk-pill">Nginx</span><span class="sk-pill">Linux</span><span class="sk-pill hi">DICOM</span><span class="sk-pill hi">Medical Imaging</span><span class="sk-pill">OpenCV</span><span class="sk-pill">NumPy & Pandas</span><span class="sk-pill">Agile</span>
         </div>
-
-        <!-- VERTEVUE -->
-        <div class="project-card">
-          <p class="project-tag">Spine AI &middot; Clinical</p>
-          <p class="project-name">VERTEVue — Vertebral Segmentation</p>
-          <p class="project-desc">Automated segmentation of C2, L4, L5, and S1 spinal structures from DICOM data for real-time clinical diagnostic support. Part of a unified enterprise AI platform.</p>
-          <div class="project-metrics">
-            <span class="project-metric">89% accuracy</span>
-            <span class="project-metric">Real-time workflow</span>
-          </div>
-          <a href="https://vertevue.protosonline.in" target="_blank" rel="noopener" class="project-link">
-            Live Demo
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </a>
-        </div>
-
-        <!-- SUVUE -->
-        <div class="project-card">
-          <p class="project-tag">Oncology &middot; PET-CT</p>
-          <p class="project-name">SUVue — Whole-Body Tumour Detection</p>
-          <p class="project-desc">Deep learning model for whole-body PET-CT tumour detection supporting early-stage cancer identification. 40% inference time reduction enabling real-time production clinical support.</p>
-          <div class="project-metrics">
-            <span class="project-metric">40% faster inference</span>
-            <span class="project-metric">Real-time production</span>
-          </div>
-          <a href="https://suvue.protosonline.in" target="_blank" rel="noopener" class="project-link">
-            Live Demo
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </a>
-        </div>
-
-        <!-- DIYAI -->
-        <div class="project-card">
-          <p class="project-tag">No-Code AI &middot; Platform</p>
-          <p class="project-name">diyAI — No-Code ML Platform</p>
-          <p class="project-desc">Client-deployable platform enabling non-technical clinicians to build, train, and deploy custom ML models without any programming knowledge. Adopted by NHS (UK), Paris radiology centres, and WCG Clinic (US).</p>
-          <div class="project-metrics">
-            <span class="project-metric">NHS &middot; Paris &middot; WCG</span>
-            <span class="project-metric">Zero-code deployment</span>
-          </div>
-          <a href="https://diyai.protosonline.in" target="_blank" rel="noopener" class="project-link">
-            Live Demo
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </a>
-        </div>
-
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- EXPERIENCE -->
-  <section class="exp-bg" id="experience">
-    <div class="section-wrap">
-      <p class="section-tag">Career</p>
-      <h2 class="section-title">Experience</h2>
-      <div class="timeline">
-
+<!-- EXPERIENCE -->
+<section class="exp-wrap" id="experience">
+  <div class="sec-inner">
+    <p class="sec-eye reveal">Career</p>
+    <h2 class="sec-title reveal d1">Experience & Recognition</h2>
+    <div class="exp-grid">
+      <div class="timeline reveal d1">
         <div class="exp-item">
           <p class="exp-period">Aug 2021 – Present</p>
           <p class="exp-title">ML Engineer / AI Developer</p>
-          <p class="exp-company">Aramis Imaging LLP &nbsp;&middot;&nbsp; Kerala, India</p>
-          <p class="exp-desc">Led end-to-end R&amp;D of medical imaging AI and Generative AI systems — from FDA-trial segmentation models to a cloud-native teleradiology platform adopted internationally. Managed full production lifecycle including data ingestion, model training, scalable deployment on AWS and Docker, and stakeholder communication with radiologists and clinical teams across India, UK, France, and the US. Practiced agile methodology across all sprints, driving cross-functional collaboration between engineering and clinical stakeholders.</p>
+          <p class="exp-company">Aramis Imaging LLP · Kerala, India</p>
+          <p class="exp-desc">Led end-to-end R&D of medical imaging AI and GenAI systems — from FDA-trial segmentation models to a cloud-native teleradiology platform adopted internationally. Full production lifecycle: AWS, Docker, clinical stakeholders across India, UK, France, and US.</p>
         </div>
-
         <div class="exp-item">
           <p class="exp-period">Jun 2021 – Aug 2021</p>
           <p class="exp-title">Data Science Intern</p>
-          <p class="exp-company">TCS iON &nbsp;&middot;&nbsp; India</p>
-          <p class="exp-desc">Built and deployed ML models as Flask web applications within an agile team. Created interactive dashboards and ML-powered analytical tools, delivering all projects on schedule. Selected following Certified Specialist in Data Science &amp; Analytics — ICT Academy of Kerala (385 hours).</p>
+          <p class="exp-company">TCS iON · India</p>
+          <p class="exp-desc">Built and deployed ML models as Flask web apps within an agile team. Created interactive dashboards and ML-powered analytical tools, delivering all projects on schedule.</p>
         </div>
-
       </div>
-
-      <!-- ACHIEVEMENTS inline -->
-      <p class="section-tag" style="margin-top:3.5rem;">Recognition</p>
-      <h2 class="section-title" style="margin-bottom:1.5rem;">Achievements</h2>
-      <div class="ach-grid">
+      <div class="ach-list reveal d2">
         <div class="ach-card">
-          <div class="ach-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <div class="ach-text">
-            <strong>CHAIMELEON Grand Challenge 2023</strong>
-            Top performer in this international medical AI competition across cancer classification tasks.
-            <br><a href="https://chaimeleon.grand-challenge.org/evaluation/test-breast-championship/leaderboard/" target="_blank" rel="noopener" style="color:var(--teal);font-size:0.75rem;text-decoration:none;border-bottom:1px solid transparent;" onmouseover="this.style.borderBottomColor='var(--teal)'" onmouseout="this.style.borderBottomColor='transparent'">View Leaderboard &rarr;</a>
-          </div>
+          <div class="ach-ico"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="ach-txt"><strong>CHAIMELEON Grand Challenge 2023</strong>Top performer — international medical AI competition across cancer classification tasks. <br><a href="https://chaimeleon.grand-challenge.org/evaluation/test-breast-championship/leaderboard/" target="_blank">View Leaderboard →</a></div>
         </div>
         <div class="ach-card">
-          <div class="ach-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </div>
-          <div class="ach-text">
-            <strong>RSNA Annual Conference</strong>
-            Attendee — Radiological Society of North America, 2022, 2023 &amp; 2025.
-          </div>
+          <div class="ach-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <div class="ach-txt"><strong>RSNA Annual Conference</strong>Attendee — Radiological Society of North America, 2022, 2023 & 2025.</div>
         </div>
         <div class="ach-card">
-          <div class="ach-icon">
-            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          </div>
-          <div class="ach-text">
-            <strong>Arab Health Expo</strong>
-            Attendee — Dubai, 2022, 2023, 2024 &amp; 2025.
-          </div>
+          <div class="ach-ico"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div class="ach-txt"><strong>Arab Health Expo</strong>Attendee — Dubai, 2022, 2023, 2024 & 2025.</div>
         </div>
         <div class="ach-card">
-          <div class="ach-icon">
-            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          </div>
-          <div class="ach-text">
-            <strong>11 Professional Certifications</strong>
-            DeepLearning.AI, DataCamp, IBM — covering ML, GenAI, RAG &amp; TensorFlow (2022–2025).
-            <br><a href="https://www.linkedin.com/in/subinvidhu/details/certifications/" target="_blank" rel="noopener" style="color:var(--teal);font-size:0.75rem;text-decoration:none;border-bottom:1px solid transparent;" onmouseover="this.style.borderBottomColor='var(--teal)'" onmouseout="this.style.borderBottomColor='transparent'">View all &rarr;</a>
-          </div>
+          <div class="ach-ico"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div class="ach-txt"><strong>11 Professional Certifications</strong>DeepLearning.AI, DataCamp, IBM — ML, GenAI, RAG & TensorFlow (2022–2025). <br><a href="https://www.linkedin.com/in/subinvidhu/details/certifications/" target="_blank">View all →</a></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section class="contact-bg" id="contact">
-    <div class="section-wrap">
-      <p class="section-tag">Get in touch</p>
-      <h2 class="section-title">Contact</h2>
-      <p class="contact-sub">Open to international opportunities in medical AI, clinical ML, and Generative AI. Happy to talk RAG systems, DICOM workflows, or anything at the intersection of AI and healthcare.</p>
-      <div class="contact-links">
-        <a href="mailto:subinvidhuu@gmail.com" class="contact-link">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          subinvidhuu@gmail.com
-        </a>
-        <a href="https://www.linkedin.com/in/subinvidhu/" target="_blank" rel="noopener" class="contact-link">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://github.com/Subin-Vidhu" target="_blank" rel="noopener" class="contact-link">
-          <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          GitHub
-        </a>
-        <a href="tel:+918086516291" class="contact-link">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          +91 8086516291
-        </a>
-      </div>
+<!-- CONTACT -->
+<section class="contact-wrap" id="contact">
+  <div class="contact-inner">
+    <p class="sec-eye reveal" style="justify-content:center;">Get in Touch</p>
+    <h2 class="c-title reveal d1">LET'S BUILD<br><span>SOMETHING</span><br>GREAT.</h2>
+    <p class="c-sub reveal d2">Open to international opportunities in medical AI, clinical ML, and Generative AI. Let's talk RAG systems, DICOM workflows, or anything at the intersection of AI and healthcare.</p>
+    <div class="c-links reveal d3">
+      <a href="mailto:subinvidhuu@gmail.com" class="c-link"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>subinvidhuu@gmail.com</a>
+      <a href="https://www.linkedin.com/in/subinvidhu/" target="_blank" class="c-link"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+      <a href="https://github.com/Subin-Vidhu" target="_blank" class="c-link"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>GitHub</a>
+      <a href="tel:+918086516291" class="c-link"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+91 8086 516 291</a>
     </div>
-  </section>
+  </div>
+</section>
+<footer>SUBIN S &nbsp;·&nbsp; Kerala, India &nbsp;·&nbsp; subinvidhuu@gmail.com &nbsp;·&nbsp; ML Engineer · Medical Imaging AI</footer>
 
-  <footer>
-    Subin S &nbsp;&middot;&nbsp; Kerala, India &nbsp;&middot;&nbsp; subinvidhuu@gmail.com &nbsp;&middot;&nbsp; Built with HTML &amp; CSS
-  </footer>
+<script>
+// ── HERO PARTICLES ──────────────────────────────────────────────────────
+(function(){
+  const cvs = document.getElementById('hero-canvas');
+  const ctx = cvs.getContext('2d');
+  let W, H, pts, mouse={x:-9999,y:-9999};
+  function resize(){ W=cvs.width=cvs.offsetWidth; H=cvs.height=cvs.offsetHeight; build(); }
+  function build(){
+    pts=[];
+    const cols=Math.ceil(W/80), rows=Math.ceil(H/80);
+    for(let r=0;r<=rows;r++) for(let c=0;c<=cols;c++)
+      pts.push({bx:c*80,by:r*80,x:0,y:0,ph:Math.random()*Math.PI*2,vx:0,vy:0});
+  }
+  let t=0;
+  function frame(){
+    ctx.clearRect(0,0,W,H); t+=0.01;
+    for(let p of pts){
+      const w=Math.sin(t+p.ph)*4;
+      const dx=mouse.x-p.bx, dy=mouse.y-p.by, d=Math.hypot(dx,dy);
+      if(d<200){p.vx+=dx*0.00012;p.vy+=dy*0.00012;}
+      p.vx*=0.9;p.vy*=0.9;
+      p.x=p.bx+w+p.vx*8; p.y=p.by+w+p.vy*8;
+    }
+    ctx.lineWidth=0.5;
+    for(let i=0;i<pts.length;i++) for(let j=i+1;j<pts.length;j++){
+      const d=Math.hypot(pts[i].x-pts[j].x,pts[i].y-pts[j].y);
+      if(d<110){ ctx.strokeStyle=`rgba(0,212,212,${(1-d/110)*0.22})`; ctx.beginPath(); ctx.moveTo(pts[i].x,pts[i].y); ctx.lineTo(pts[j].x,pts[j].y); ctx.stroke(); }
+    }
+    for(let p of pts){
+      const d=Math.hypot(mouse.x-p.x,mouse.y-p.y);
+      ctx.fillStyle=`rgba(0,212,212,${d<160?0.75:0.18})`;
+      ctx.beginPath(); ctx.arc(p.x,p.y,1.4,0,Math.PI*2); ctx.fill();
+    }
+    requestAnimationFrame(frame);
+  }
+  window.addEventListener('resize',resize);
+  document.querySelector('.hero-wrap').addEventListener('mousemove',e=>{
+    const r=cvs.getBoundingClientRect(); mouse.x=e.clientX-r.left; mouse.y=e.clientY-r.top;
+  });
+  resize(); frame();
+})();
 
+// ── ARC STAT COUNTERS ───────────────────────────────────────────────────
+(function(){
+  const stats=[
+    {el:'arc0',cnt:'cnt0',val:4,max:10,suf:'+'},
+    {el:'arc1',cnt:'cnt1',val:92,max:100,suf:'%'},
+    {el:'arc2',cnt:'cnt2',val:60,max:100,suf:'%'},
+    {el:'arc3',cnt:'cnt3',val:50,max:100,suf:'+'},
+  ];
+  const CIRC=263.8;
+  function animate(s){
+    let cur=0; const step=s.val/60;
+    const iv=setInterval(()=>{
+      cur=Math.min(cur+step,s.val);
+      document.getElementById(s.cnt).textContent=Math.floor(cur)+s.suf;
+      const pct=cur/s.max;
+      document.getElementById(s.el).style.strokeDashoffset=CIRC*(1-pct);
+      if(cur>=s.val) clearInterval(iv);
+    },22);
+  }
+  // Trigger immediately if already visible, else observe
+  const el = document.getElementById('stats-row');
+  const rect = el.getBoundingClientRect();
+  if(rect.top < window.innerHeight) {
+    setTimeout(()=>stats.forEach(animate), 300);
+  } else {
+    const obs=new IntersectionObserver(entries=>{
+      if(entries[0].isIntersecting){ stats.forEach(animate); obs.disconnect(); }
+    },{threshold:0.1});
+    obs.observe(el);
+  }
+})();
+
+// ── CT INTERACTIVE VIEWER ───────────────────────────────────────────────
+(function(){
+  const cvs=document.getElementById('ct-canvas');
+  const ctx=cvs.getContext('2d');
+  const W=540,H=420,cx=W/2,cy=H/2+10;
+  window._ctShowPred=true;
+  let slice=48;
+  let zoom=1, panX=0, panY=0;
+  let drag=false, dragLast={x:0,y:0};
+
+  // Noise texture
+  const noiseCvs=document.createElement('canvas'); noiseCvs.width=W; noiseCvs.height=H;
+  const nCtx=noiseCvs.getContext('2d');
+  const nImg=nCtx.createImageData(W,H);
+  for(let i=0;i<nImg.data.length;i+=4){
+    const v=Math.random()*18|0; nImg.data[i]=v; nImg.data[i+1]=v; nImg.data[i+2]=v; nImg.data[i+3]=255;
+  }
+  nCtx.putImageData(nImg,0,0);
+
+  // Slice data: kidney presence per slice range
+  function getAnatomy(sl){
+    const kL={visible:false,alpha:0,scaleY:0}, kR={...kL};
+    const hasStoneL = sl>=52&&sl<=72, hasStoneR = sl>=58&&sl<=68;
+    if(sl>=28&&sl<=100){
+      const entry=sl<46?((sl-28)/18):1;
+      const exit=sl>85?Math.max(0,1-(sl-85)/15):1;
+      kL.visible=true; kL.alpha=Math.min(entry,exit);
+      kR.visible=true; kR.alpha=Math.min(entry,exit);
+      kL.scaleY=sl<55?0.6+(sl-28)/55*0.4:sl>80?Math.max(0.3,1-(sl-80)/20):1;
+      kR.scaleY=kL.scaleY;
+    }
+    const liverAlpha=sl<60?Math.min(1,(sl<25?0:sl>55?Math.max(0,(60-sl)/5):(sl-25)/30)):0;
+    return {kL,kR,hasStoneL,hasStoneR,liverAlpha,hasPsoas:sl>30&&sl<110};
+  }
+
+  // Realistic CT renderer — grayscale Hounsfield-mapped anatomy
+  function gr(v){return `rgb(${v},${v},${v})`;}
+  function grA(v,a){return `rgba(${v},${v},${v},${a})`;}
+
+  function drawScene(){
+    ctx.clearRect(0,0,W,H);
+    ctx.save();
+    ctx.translate(W/2+panX,H/2+panY); ctx.scale(zoom,zoom); ctx.translate(-W/2,-H/2);
+
+    const bodyR=178;
+    ctx.fillStyle='#000'; ctx.fillRect(0,0,W,H);
+    ctx.save(); ctx.beginPath(); ctx.arc(cx,cy,bodyR,0,Math.PI*2); ctx.clip();
+
+    // --- Body cross-section base (fat level ~38px in W400L40) ---
+    const baseG=ctx.createRadialGradient(cx,cy,0,cx,cy,bodyR);
+    baseG.addColorStop(0,gr(52));     // abdominal cavity (soft tissue avg)
+    baseG.addColorStop(0.5,gr(44));
+    baseG.addColorStop(0.78,gr(32));  // subcutaneous fat (dark)
+    baseG.addColorStop(0.9,gr(90));   // skin ring (brighter)
+    baseG.addColorStop(1,gr(60));
+    ctx.beginPath(); ctx.arc(cx,cy,bodyR,0,Math.PI*2); ctx.fillStyle=baseG; ctx.fill();
+
+    const a=getAnatomy(slice);
+
+    // --- Liver (right side, upper slices) ---
+    if(a.liverAlpha>0){
+      ctx.save(); ctx.globalAlpha=a.liverAlpha;
+      const lg=ctx.createRadialGradient(cx+50,cy-15,0,cx+50,cy-15,100);
+      lg.addColorStop(0,grA(105,0.95)); lg.addColorStop(0.7,grA(92,0.7)); lg.addColorStop(1,grA(60,0));
+      ctx.beginPath(); ctx.ellipse(cx+55,cy-5,95,72,0.15,0,Math.PI*2); ctx.fillStyle=lg; ctx.fill();
+      // Spleen (left side)
+      const sg=ctx.createRadialGradient(cx-75,cy-25,0,cx-75,cy-25,48);
+      sg.addColorStop(0,grA(98,0.9)); sg.addColorStop(1,grA(70,0));
+      ctx.beginPath(); ctx.ellipse(cx-75,cy-20,42,35,0.3,0,Math.PI*2); ctx.fillStyle=sg; ctx.fill();
+      ctx.restore();
+    }
+
+    // --- Abdominal wall muscles (rectus, obliques) ---
+    [{x:cx-22,y:cy-62,rx:16,ry:22},{x:cx+22,y:cy-62,rx:16,ry:22}].forEach(m=>{
+      const mg=ctx.createRadialGradient(m.x,m.y,0,m.x,m.y,m.rx*1.6);
+      mg.addColorStop(0,grA(115,0.9)); mg.addColorStop(1,grA(80,0));
+      ctx.beginPath(); ctx.ellipse(m.x,m.y,m.rx,m.ry,0,0,Math.PI*2); ctx.fillStyle=mg; ctx.fill();
+    });
+
+    // --- Paraspinal muscles (bilateral, flanking spine) ---
+    [{x:cx-30,y:cy+32},{x:cx+30,y:cy+32}].forEach(m=>{
+      const mg=ctx.createRadialGradient(m.x,m.y,0,m.x,m.y,38);
+      mg.addColorStop(0,grA(120,0.95)); mg.addColorStop(0.6,grA(105,0.8)); mg.addColorStop(1,grA(70,0));
+      ctx.beginPath(); ctx.ellipse(m.x,m.y,34,40,0,0,Math.PI*2); ctx.fillStyle=mg; ctx.fill();
+    });
+
+    // --- Psoas muscles ---
+    if(a.hasPsoas){
+      [{x:cx-52,y:cy+14},{x:cx+52,y:cy+14}].forEach(m=>{
+        const mg=ctx.createRadialGradient(m.x,m.y,0,m.x,m.y,27);
+        mg.addColorStop(0,grA(112,0.9)); mg.addColorStop(1,grA(80,0));
+        ctx.beginPath(); ctx.ellipse(m.x,m.y,22,30,0.1,0,Math.PI*2); ctx.fillStyle=mg; ctx.fill();
+      });
+    }
+
+    // --- Vertebral body (white, posterior) ---
+    const vg2=ctx.createRadialGradient(cx,cy+34,0,cx,cy+34,20);
+    vg2.addColorStop(0,gr(255)); vg2.addColorStop(0.5,gr(245)); vg2.addColorStop(0.8,gr(200)); vg2.addColorStop(1,grA(140,0));
+    ctx.beginPath(); ctx.ellipse(cx,cy+34,17,15,0,0,Math.PI*2); ctx.fillStyle=vg2; ctx.fill();
+    // Spinous process
+    const spG=ctx.createRadialGradient(cx,cy+56,0,cx,cy+56,10);
+    spG.addColorStop(0,gr(240)); spG.addColorStop(1,grA(140,0));
+    ctx.beginPath(); ctx.ellipse(cx,cy+56,8,11,0,0,Math.PI*2); ctx.fillStyle=spG; ctx.fill();
+    // Transverse processes (lateral protrusions)
+    [{x:cx-22,y:cy+34},{x:cx+22,y:cy+34}].forEach(p=>{
+      const tg=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,12);
+      tg.addColorStop(0,gr(220)); tg.addColorStop(1,grA(120,0));
+      ctx.beginPath(); ctx.ellipse(p.x,p.y,10,7,0,0,Math.PI*2); ctx.fillStyle=tg; ctx.fill();
+    });
+
+    // --- Aorta (anterior to spine, left) ---
+    const aoG=ctx.createRadialGradient(cx-10,cy+8,0,cx-10,cy+8,13);
+    aoG.addColorStop(0,gr(155)); aoG.addColorStop(0.6,gr(128)); aoG.addColorStop(1,grA(90,0));
+    ctx.beginPath(); ctx.arc(cx-10,cy+8,11,0,Math.PI*2); ctx.fillStyle=aoG; ctx.fill();
+    ctx.beginPath(); ctx.arc(cx-10,cy+8,11,0,Math.PI*2); ctx.strokeStyle=gr(170); ctx.lineWidth=1.5; ctx.stroke();
+
+    // --- IVC (right of aorta) ---
+    const iG=ctx.createRadialGradient(cx+12,cy+8,0,cx+12,cy+8,14);
+    iG.addColorStop(0,gr(140)); iG.addColorStop(1,grA(90,0));
+    ctx.beginPath(); ctx.ellipse(cx+12,cy+8,14,10,0,0,Math.PI*2); ctx.fillStyle=iG; ctx.fill();
+    ctx.beginPath(); ctx.ellipse(cx+12,cy+8,14,10,0,0,Math.PI*2); ctx.strokeStyle=gr(155); ctx.lineWidth=1; ctx.stroke();
+
+    // --- Kidneys ---
+    const kidDefs=[
+      {x:cx-108,y:cy-8,angle:-0.18,side:'L',alpha:a.kL.alpha,sY:a.kL.scaleY,hasStone:a.hasStoneL,
+       stones:[[cx-104,cy-18],[cx-118,cy+11]]},
+      {x:cx+108,y:cy-8,angle:0.18,side:'R',alpha:a.kR.alpha,sY:a.kR.scaleY,hasStone:a.hasStoneR,
+       stones:[[cx+116,cy-14]]},
+    ];
+
+    kidDefs.forEach(k=>{
+      if(!k.alpha) return;
+      const h=Math.max(12, 42*k.sY);
+      const hiX=k.side==='L'?10:-10;
+
+      // Perinephric fat (dark halo)
+      ctx.save(); ctx.globalAlpha=k.alpha;
+      const fatG=ctx.createRadialGradient(k.x,k.y,h*0.6,k.x,k.y,h*1.5);
+      fatG.addColorStop(0,grA(28,0)); fatG.addColorStop(0.5,grA(22,0.9)); fatG.addColorStop(1,grA(15,0));
+      ctx.beginPath(); ctx.ellipse(k.x,k.y,44,h*1.4,k.angle,0,Math.PI*2); ctx.fillStyle=fatG; ctx.fill();
+
+      // Kidney body — cortex/medulla gradient
+      ctx.translate(k.x,k.y); ctx.rotate(k.angle);
+      const cortG=ctx.createRadialGradient(0,0,h*0.25,0,0,32);
+      cortG.addColorStop(0,gr(98));   // medulla (slightly darker)
+      cortG.addColorStop(0.5,gr(118)); // cortex (brighter)
+      cortG.addColorStop(0.82,gr(112));
+      cortG.addColorStop(1,grA(70,0.5));
+      ctx.beginPath(); ctx.ellipse(0,0,30,h,0,0,Math.PI*2); ctx.fillStyle=cortG; ctx.fill();
+
+      // Renal pelvis (collecting system, slightly brighter)
+      const pelG=ctx.createRadialGradient(hiX,0,0,hiX,0,13);
+      pelG.addColorStop(0,gr(138)); pelG.addColorStop(1,grA(100,0));
+      ctx.beginPath(); ctx.ellipse(hiX,0,13,15,0,0,Math.PI*2); ctx.fillStyle=pelG; ctx.fill();
+
+      // Hilum indentation (dark notch medial side)
+      ctx.beginPath(); ctx.ellipse(hiX,0,12,14,0,0,Math.PI*2); ctx.fillStyle=grA(18,0.6); ctx.fill();
+
+      // Kidney outline
+      ctx.beginPath(); ctx.ellipse(0,0,30,h,0,0,Math.PI*2);
+      ctx.strokeStyle=grA(140,0.5); ctx.lineWidth=0.8; ctx.stroke();
+      ctx.setTransform(1,0,0,1,0,0); ctx.translate(W/2+panX,H/2+panY); ctx.scale(zoom,zoom); ctx.translate(-W/2,-H/2); // restore world transform after kidney rotation
+
+      // AI segmentation overlay
+      if(window._ctShowPred){
+        ctx.save(); ctx.globalAlpha=k.alpha*0.92;
+        ctx.translate(k.x,k.y); ctx.rotate(k.angle);
+        ctx.beginPath(); ctx.ellipse(0,0,31,h+1,0,0,Math.PI*2);
+        ctx.strokeStyle='rgba(0,220,220,0.95)'; ctx.lineWidth=2;
+        ctx.shadowColor='rgba(0,212,212,1)'; ctx.shadowBlur=14; ctx.stroke(); ctx.shadowBlur=0;
+        ctx.beginPath(); ctx.ellipse(0,0,31,h+1,0,0,Math.PI*2);
+        ctx.fillStyle='rgba(0,212,212,0.07)'; ctx.fill();
+        ctx.restore();
+      }
+
+      ctx.restore(); // globalAlpha
+
+      // Stones — hyperdense (very bright white, like calcium) — always visible, AI ring when ON
+      if(k.hasStone){
+        k.stones.forEach(([sx,sy])=>{
+          if(!sx) return;
+          ctx.save(); ctx.globalAlpha=k.alpha;
+          // Calcium density (255 in W400L40)
+          const stG=ctx.createRadialGradient(sx,sy,0,sx,sy,8);
+          stG.addColorStop(0,gr(255)); stG.addColorStop(0.4,gr(245)); stG.addColorStop(0.75,gr(185)); stG.addColorStop(1,grA(80,0));
+          ctx.beginPath(); ctx.arc(sx,sy,8,0,Math.PI*2); ctx.fillStyle=stG; ctx.fill();
+          ctx.beginPath(); ctx.arc(sx,sy,3.5,0,Math.PI*2); ctx.fillStyle=gr(255); ctx.fill();
+          // AI highlight ring
+          if(window._ctShowPred){
+            const pulse=0.75+0.25*Math.sin(Date.now()*0.005);
+            ctx.beginPath(); ctx.arc(sx,sy,11,0,Math.PI*2);
+            ctx.strokeStyle=`rgba(255,210,50,${k.alpha*pulse})`; ctx.lineWidth=1.5;
+            ctx.shadowColor='rgba(255,200,40,0.9)'; ctx.shadowBlur=10; ctx.stroke(); ctx.shadowBlur=0;
+          }
+          ctx.restore();
+        });
+      }
+
+      // Labels
+      if(window._ctShowPred&&k.alpha>0.5){
+        ctx.save(); ctx.globalAlpha=k.alpha;
+        ctx.font='10px JetBrains Mono,monospace'; ctx.fillStyle='rgba(0,220,220,0.92)';
+        const lx=k.side==='L'?k.x-72:k.x+35;
+        ctx.fillText(k.side==='L'?'L. KIDNEY':'R. KIDNEY',lx,k.y+4);
+        ctx.strokeStyle='rgba(0,212,212,0.3)'; ctx.lineWidth=0.7;
+        ctx.beginPath(); ctx.moveTo(k.side==='L'?k.x-29:k.x+29,k.y);
+        ctx.lineTo(lx+(k.side==='R'?58:0),k.y); ctx.stroke();
+        if(k.hasStone){
+          ctx.font='9px JetBrains Mono,monospace';
+          ctx.fillStyle='rgba(255,210,50,0.95)';
+          const lsx=k.side==='L'?cx-162:cx+88;
+          ctx.fillText('CALCULI ▲',lsx,k.y-22);
+        }
+        ctx.restore();
+      }
+    });
+
+    // CT noise
+    ctx.globalAlpha=0.1; ctx.drawImage(noiseCvs,0,0); ctx.globalAlpha=1;
+
+    // CT circle edge
+    ctx.beginPath(); ctx.arc(cx,cy,bodyR,0,Math.PI*2);
+    ctx.strokeStyle=gr(45); ctx.lineWidth=1.5; ctx.stroke();
+
+    // Crosshairs (standard DICOM)
+    ctx.strokeStyle='rgba(180,180,180,0.07)'; ctx.lineWidth=0.5;
+    ctx.beginPath(); ctx.moveTo(cx,0); ctx.lineTo(cx,H); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(0,cy); ctx.lineTo(W,cy); ctx.stroke();
+
+    ctx.restore(); // clip
+    ctx.restore(); // transform
+
+    // HUD
+    ctx.font='10px JetBrains Mono,monospace'; ctx.fillStyle='rgba(180,220,180,0.55)';
+    ctx.fillText('W:400 L:40',8,H-8);
+    const conf=a.kL.alpha>0?Math.round(88+a.kL.alpha*4.4):0;
+    document.getElementById('hud-conf').textContent=window._ctShowPred&&conf>0?`CONF: ${conf}%`:'PRED: OFF';
+
+    requestAnimationFrame(drawScene);
+  }
+
+  // Slider
+  document.getElementById('slice-slider').addEventListener('input',e=>{
+    slice=parseInt(e.target.value);
+    document.getElementById('hud-info').textContent=`SL: ${slice} / W:400 L:40`;
+  });
+
+  // Pan
+  cvs.addEventListener('mousedown',e=>{drag=true; dragLast={x:e.offsetX,y:e.offsetY};});
+  cvs.addEventListener('mousemove',e=>{
+    if(!drag) return;
+    panX+=e.offsetX-dragLast.x; panY+=e.offsetY-dragLast.y;
+    panX=Math.max(-120,Math.min(120,panX)); panY=Math.max(-100,Math.min(100,panY));
+    dragLast={x:e.offsetX,y:e.offsetY};
+  });
+  cvs.addEventListener('mouseup',()=>drag=false);
+  cvs.addEventListener('mouseleave',()=>drag=false);
+  // Zoom
+  cvs.addEventListener('wheel',e=>{
+    e.preventDefault();
+    zoom=Math.max(0.7,Math.min(3,zoom-e.deltaY*0.001));
+  },{passive:false});
+  // Touch slice (swipe vertical changes slice)
+  let touchY=0;
+  cvs.addEventListener('touchstart',e=>{touchY=e.touches[0].clientY;},{passive:true});
+  cvs.addEventListener('touchmove',e=>{
+    e.preventDefault();
+    const dy=touchY-e.touches[0].clientY; touchY=e.touches[0].clientY;
+    slice=Math.max(1,Math.min(120,slice+Math.round(dy*0.4)));
+    document.getElementById('slice-slider').value=slice;
+    document.getElementById('hud-info').textContent=`SL: ${slice} / W:400 L:40`;
+  },{passive:false});
+
+  drawScene();
+})();
+
+// ── AI TOGGLE ──
+window.togglePred=function(){
+  window._ctShowPred=!window._ctShowPred;
+  const btn=document.getElementById('pred-btn');
+  btn.textContent=window._ctShowPred?'AI ON':'AI OFF';
+  btn.classList.toggle('active',window._ctShowPred);
+};
+
+// ── RAG KNOWLEDGE GRAPH ─────────────────────────────────────────────────
+(function(){
+  const cvs=document.getElementById('rag-canvas');
+  const ctx=cvs.getContext('2d');
+  const W=480,H=400;
+  const nodes=[];
+  const edges=[];
+  // Central query node
+  const center={x:W/2,y:H/2,r:14,label:'QUERY',color:'#6ab4ff',fixed:true};
+  nodes.push(center);
+  // Article cluster nodes
+  const articles=['Renal CT','Stone Analysis','Kidney Anatomy','Calcium Deposits','Urology','MRI Contrast','PET-CT','Radiology AI','DICOM','RAG Pipeline','LangChain','Weaviate'];
+  const rings=[
+    {count:5,r:110,nodeR:7},
+    {count:7,r:185,nodeR:5},
+  ];
+  let ni=0;
+  rings.forEach(ring=>{
+    for(let i=0;i<ring.count&&ni<articles.length;i++,ni++){
+      const a=(i/ring.count)*Math.PI*2+Math.random()*0.3;
+      const vx=(Math.random()-0.5)*0.4, vy=(Math.random()-0.5)*0.4;
+      const n={x:W/2+Math.cos(a)*ring.r,y:H/2+Math.sin(a)*ring.r,r:ring.nodeR,label:articles[ni],color:`rgba(106,180,255,0.7)`,vx,vy,ox:W/2+Math.cos(a)*ring.r,oy:H/2+Math.sin(a)*ring.r,drift:Math.random()*Math.PI*2};
+      nodes.push(n);
+      edges.push({from:0,to:nodes.length-1,alpha:0.15+Math.random()*0.12});
+    }
+  });
+  // Cross edges
+  for(let i=1;i<nodes.length;i++) for(let j=i+1;j<nodes.length;j++)
+    if(Math.random()<0.12) edges.push({from:i,to:j,alpha:0.07});
+
+  // Animated query paths
+  let queries=[];
+  function spawnQuery(){
+    const target=1+Math.floor(Math.random()*(nodes.length-1));
+    queries.push({target,t:0,speed:0.014+Math.random()*0.01});
+  }
+  setInterval(spawnQuery,1200); spawnQuery();
+
+  let t=0;
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    t+=0.008;
+
+    // Drift outer nodes
+    nodes.forEach((n,i)=>{ if(i===0) return; n.x=n.ox+Math.sin(t+n.drift)*8; n.y=n.oy+Math.cos(t+n.drift*0.7)*6; });
+
+    // Edges
+    edges.forEach(e=>{
+      const a=nodes[e.from], b=nodes[e.to];
+      ctx.strokeStyle=`rgba(106,180,255,${e.alpha})`;
+      ctx.lineWidth=0.8; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+    });
+
+    // Query particles
+    queries.forEach((q,i)=>{
+      q.t+=q.speed;
+      if(q.t>1){ queries.splice(i,1); return; }
+      const src=nodes[0], tgt=nodes[q.target];
+      const x=src.x+(tgt.x-src.x)*q.t, y=src.y+(tgt.y-src.y)*q.t;
+      const pg=ctx.createRadialGradient(x,y,0,x,y,7);
+      pg.addColorStop(0,'rgba(106,180,255,0.9)'); pg.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.beginPath(); ctx.arc(x,y,7,0,Math.PI*2); ctx.fillStyle=pg; ctx.fill();
+    });
+
+    // Nodes
+    nodes.forEach((n,i)=>{
+      const pulse=i===0?1+Math.sin(t*2)*0.12:1;
+      const ng=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r*pulse*2);
+      ng.addColorStop(0,i===0?'rgba(106,180,255,0.95)':'rgba(106,180,255,0.75)');
+      ng.addColorStop(0.5,i===0?'rgba(106,180,255,0.3)':'rgba(106,180,255,0.15)');
+      ng.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.beginPath(); ctx.arc(n.x,n.y,n.r*pulse*1.8,0,Math.PI*2); ctx.fillStyle=ng; ctx.fill();
+      ctx.beginPath(); ctx.arc(n.x,n.y,n.r*pulse,0,Math.PI*2);
+      ctx.fillStyle=i===0?'#6ab4ff':'rgba(106,180,255,0.6)';
+      ctx.shadowColor='#6ab4ff'; ctx.shadowBlur=i===0?20:8; ctx.fill(); ctx.shadowBlur=0;
+      if(i===0||i<6){
+        ctx.font=`${i===0?'600':'400'} ${i===0?11:9}px JetBrains Mono, monospace`;
+        ctx.fillStyle=i===0?'#6ab4ff':'rgba(106,180,255,0.5)';
+        ctx.textAlign='center';
+        ctx.fillText(n.label,n.x,n.y-n.r*pulse-5);
+      }
+    });
+
+    // Label
+    ctx.fillStyle='rgba(106,180,255,0.25)'; ctx.font='10px JetBrains Mono, monospace'; ctx.textAlign='left';
+    ctx.fillText('RAG KNOWLEDGE GRAPH · 100K+ ARTICLES',12,H-12);
+
+    requestAnimationFrame(frame);
+  }
+  frame();
+})();
+
+// ── 3D CARD TILT ─────────────────────────────────────────────────────────
+document.querySelectorAll('.p-card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-0.5, y=(e.clientY-r.top)/r.height-0.5;
+    card.style.transform=`perspective(900px) rotateY(${x*14}deg) rotateX(${-y*14}deg) translateZ(6px)`;
+    card.style.setProperty('--mx',`${(x+0.5)*100}%`);
+    card.style.setProperty('--my',`${(y+0.5)*100}%`);
+  });
+  card.addEventListener('mouseleave',()=>{ card.style.transform='perspective(900px) rotateY(0) rotateX(0) translateZ(0)'; });
+});
+
+// ── SCROLL REVEAL ──────────────────────────────────────────────────────
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
+}),{threshold:0,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>{
+  const r=el.getBoundingClientRect();
+  if(r.top<window.innerHeight) el.classList.add('visible');
+  else obs.observe(el);
+});
+</script>
 </body>
 </html>
