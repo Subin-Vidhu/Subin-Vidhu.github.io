@@ -39,11 +39,11 @@
           document.title = target;
           if (cb) cb();
         }
-      }, 38);
+      }, 18);
     }
     function cycle() {
       i = (i + 1) % frames.length;
-      typewrite(frames[i], () => setTimeout(cycle, i === 0 ? 3000 : 1800));
+      typewrite(frames[i], () => setTimeout(cycle, i === 0 ? 1500 : 800));
     }
     setTimeout(cycle, 3000);
   })();
