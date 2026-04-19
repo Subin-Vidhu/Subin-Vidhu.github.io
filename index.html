@@ -9,6 +9,45 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+  (function(){
+    const frames = [
+      'Subin S',
+      '⬡ ML Engineer · GenAI',
+      '⬡ RAG · LangChain · Weaviate',
+      '⬡ Medical Imaging AI',
+      '⬡ FDA Trial Systems',
+      '⬡ NHS · Paris · WCG Clinic',
+      '⬡ Deep Learning · DICOM',
+      'Subin S',
+    ];
+    let i = 0;
+    function typewrite(target, cb) {
+      const current = document.title;
+      let step = 0;
+      const totalSteps = current.length + target.length;
+      const iv = setInterval(() => {
+        if (step <= current.length) {
+          document.title = current.slice(0, current.length - step) + (step % 2 === 0 ? '|' : '');
+        } else {
+          const typed = step - current.length;
+          document.title = target.slice(0, typed) + (typed < target.length ? '|' : '');
+        }
+        step++;
+        if (step > totalSteps) {
+          clearInterval(iv);
+          document.title = target;
+          if (cb) cb();
+        }
+      }, 38);
+    }
+    function cycle() {
+      i = (i + 1) % frames.length;
+      typewrite(frames[i], () => setTimeout(cycle, i === 0 ? 3000 : 1800));
+    }
+    setTimeout(cycle, 3000);
+  })();
+</script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
